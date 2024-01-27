@@ -100,3 +100,102 @@ test(104)
 test(112)
 
 
+
+def hours_to_seconds(hours):
+    return hours * 3600
+
+
+# Don't touch below this line
+
+
+def test(hours):
+    secs = hours_to_seconds(hours)
+    print(hours, "hours is", secs, "seconds")
+
+
+test(10)
+test(1)
+test(2.5)
+test(100)
+test(33)
+
+
+def become_warrior(first_name, last_name, power):
+    title = first_name + " " + last_name + " the warrior"
+    power_plus_one = power + 1
+    return title, power_plus_one 
+
+
+# Don't edit below this line
+
+
+def main():
+    test("Frodo", "Baggins", 5)
+    test("Bilbo", "Baggins", 10)
+    test("Gandalf", "The Grey", 9000)
+
+
+def test(first_name, last_name, power_level):
+    title_string, power = become_warrior(first_name, last_name, power_level)
+    print(title_string, "has a power level of:", power)
+
+
+main()
+
+
+def get_punched(health, armor=0):
+    damage = 50 - armor
+    return health - damage 
+
+def get_slashed(health, armor=0):
+    damage = 100 - armor
+    return health - damage 
+    
+
+
+# Don't touch below this line
+
+
+def test(health, armor):
+    print(f"Health: {health}, Armor: {armor}")
+    print(f"Health after punch: {get_punched(health, armor)}")
+    print("=====================================")
+    print(f"Health: {health}, Armor: {armor}")
+    print(f"Health after slash: {get_slashed(health, armor)}\n")
+    print("=====================================")
+    print(f"Health: {health}, Armor: no armor!")
+    print(f"Health after slash: {get_slashed(health)}\n")
+    print("=====================================")
+    print(f"Health: {health}, Armor: no armor!")
+    print(f"Health after punch: {get_punched(health)}")
+    print("=====================================")
+
+
+test(400, 5)
+test(300, 3)
+test(200, 1)
+
+
+def get_title(first_name, last_name, job):
+    title = first_name + " " + last_name + " the " + job
+    return title
+
+
+# Don't touch below this line
+
+
+def test(first_name, last_name, job):
+    title = get_title(first_name, last_name, job)
+    print("First name:", first_name)
+    print("Last name:", last_name)
+    print("Job:", job)
+    print("Title:", title)
+    print("=====================================")
+
+
+test("Frodo", "Baggins", "warrior")
+test("Bilbo", "Baggins", "thief")
+test("Gandalf", "The Grey", "wizard")
+test("Aragorn", "Son of Arathorn", "ranger")
+
+
