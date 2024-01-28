@@ -198,4 +198,78 @@ test("Bilbo", "Baggins", "thief")
 test("Gandalf", "The Grey", "wizard")
 test("Aragorn", "Son of Arathorn", "ranger")
 
+def curse(weapon_damage):
+    return .5 * weapon_damage, .25 * weapon_damage
+
+
+# Don't modify below this line
+
+
+def test(weapon_damage):
+    print("Weapon's base damage:", float(weapon_damage))
+    print("Cursing...")
+    lesser_cursed, greater_cursed = curse(weapon_damage)
+    print("With lesser curse the damage is:", float(lesser_cursed), "damage.")
+    print("With greater curse the damage is:", float(greater_cursed), "damage.")
+    print("=====================================")
+
+
+def main():
+    test(100)
+    test(500)
+    test(1000)
+
+
+main()
+
+def enchant_and_attack(player_health, damage, weapon):
+    enchanted_damage = damage + 10
+    new_health = player_health - enchanted_damage
+    enchanted_weapon = f"enchanted {weapon}" 
+    return enchanted_weapon, new_health
+
+
+# Don't modify below this line
+
+
+def test(player_health, damage, weapon):
+    print("The victim has", player_health, "health.")
+    print(weapon, "does", damage, "damage. Enchanting and attacking...")
+    enchanted_weapon, new_health = enchant_and_attack(player_health, damage, weapon)
+    print("The victim has been attacked with the", enchanted_weapon)
+    print("The victim has", new_health, "health remaining.")
+    print("=====================================")
+
+
+def main():
+    test(100, 50, "sword")
+    test(500, 100, "axe")
+    test(1000, 250, "bow")
+
+
+main()
+
+
+player_level = 4
+
+def calculate_health(modifier):
+    return player_level * modifier
+
+
+def calculate_primary_stats(armor_bonus, modifier):
+    return armor_bonus + modifier + player_level
+
+
+# Don't touch below this line
+
+print(f"Character has {calculate_health(10)} max health.")
+
+print(f"Character has {calculate_primary_stats(3, 8)} primary stats.")
+
+
+def player_1_wins(player_1_score, player_2_score):
+    return player_1_score > player_2_score
+
+def can_withstand_blow(hero_armor, enemy_damage):
+    return hero_armor >= enemy_damage
 
